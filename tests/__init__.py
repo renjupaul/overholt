@@ -38,6 +38,7 @@ class OverholtAppTestCase(FlaskTestCaseMixin, OverholtTestCase):
 
     def tearDown(self):
         super(OverholtAppTestCase, self).tearDown()
+        db.session.remove()
         db.drop_all()
         self.app_context.pop()
 
